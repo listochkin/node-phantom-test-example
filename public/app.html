@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sample Page</title>
+</head>
+<body>
+<script>
+    window.IN_PHANTOM = 'callPhantom' in window;
+    if (!IN_PHANTOM) throw 'No callback';
+    window.APP = {};
+
+    (function () {
+        'use strict';
+
+        var name = 'Alex', secret ='Secret';
+        var xhr = new XMLHttpRequest();
+        xhr.open('get', '/user/' + name + '?secret=' + secret);
+        xhr.onload = function (e) {
+            APP.result = JSON.parse(xhr.responseText);
+        };
+        xhr.send();
+    })();
+</script>
+</body>
+</html>

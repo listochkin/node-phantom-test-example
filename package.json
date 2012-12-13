@@ -1,0 +1,14 @@
+{
+  "name": "node-phantom-test-example",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node app"
+  },
+  "dependencies": {
+    "express": "3.0.4",
+    "chai": "~1.4.0",
+    "mocha": "~1.7.4",
+    "phantom": "git://github.com/sebv/phantomjs-node.git"
+  }
+}
