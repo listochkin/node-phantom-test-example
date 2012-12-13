@@ -5,8 +5,9 @@
 </head>
 <body>
 <script>
-    window.IN_PHANTOM = 'callPhantom' in window;
-    if (!IN_PHANTOM) throw 'No callback';
+    // unfortunately, there's no way to check the data passed to this function 
+    // from the server side due to limitations of node-to-phantom bindings
+    window.IN_PHANTOM = 'callPhantom' in window; 
     window.APP = {};
 
     (function () {

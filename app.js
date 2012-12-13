@@ -6,16 +6,19 @@
 
     var app = express();
 
+    app.APP = {};
+
     app.configure(function () {
         app.use(express.static(__dirname + '/public'));
     });
 
     app.get('/user/:name', function (req, res) {
-        res.send({
+        var data = app.APP.data = {
             name: req.params.name,
             secret: req.query.secret
-        });
+        };
+        res.send(data);
     });
 
-    app.listen(3000);
+    module.exports = app;
 })();
